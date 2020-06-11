@@ -18,4 +18,8 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
+  output: {
+    filename: "[name].js",
+    path: `${__dirname}/review_build`,
+  },
 };
