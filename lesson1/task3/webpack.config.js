@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   module: {
@@ -20,6 +21,6 @@ module.exports = {
   ],
   output: {
     filename: "[name].js",
-    path: `${__dirname}/review_build`,
+    path: path.resolve(__dirname, "review_build"),
   },
 };
