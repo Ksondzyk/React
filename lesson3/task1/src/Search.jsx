@@ -3,9 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import "./search.scss";
 
-const elementRoot = document.querySelector("#root");
-
-const Search = (props) => {
+export const Search = (props) => {
   console.log(props);
   return (
     <div className="search">
@@ -17,5 +15,3 @@ const Search = (props) => {
     </div>
   );
 };
-
-ReactDOM.render(<Search name="Bob" />, elementRoot);
