@@ -5,7 +5,7 @@ import "./search.scss";
 
 const elementRoot = document.querySelector("#root");
 
-const SearchField = (props) => {
+const Search = (props) => {
   console.log(props);
   return (
     <div className="search">
@@ -18,4 +18,4 @@ const SearchField = (props) => {
   );
 };
 
-ReactDOM.render(<SearchField name="Bob" />, elementRoot);
+ReactDOM.render(<Search name="Bob" />, elementRoot);
