@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-export const Search = (props) => {
+const Search = (props) => {
   console.log(props);
   return (
     <div className="search">
@@ -13,3 +13,4 @@ export const Search = (props) => {
     </div>
   );
 };
+export default Search;
