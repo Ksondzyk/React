@@ -1,9 +1,9 @@
 import React from "react";
-import UserAvatar from "./UserAvatar";
+import UserAvatar from "./Avatar";
 const UserInfo = (props) => {
   return (
     <div className="user-info">
-      <UserAvatar avatarUser={props.user.avatarUser} name={props.user.name} />
+      <UserAvatar avatarUser={props.avatarUser} name={props.name} />
       <div className="user-info__name">{props.user.name}</div>
     </div>
   );

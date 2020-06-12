@@ -2,7 +2,6 @@ import React from "react";
 import "./comment.scss";
 import UserInfo from "./UserInfo";
 import moment from "moment";
-moment().format();
 
 const formatDate = (date) => moment(date).format("DD MMM YYYY");
 
