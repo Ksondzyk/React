@@ -9,7 +9,3 @@ const ProfileName = (props) => {
   );
 };
 export default ProfileName;
-
-{
-  // `${props.user.firstName} ${props.user.lastName}`;
-}

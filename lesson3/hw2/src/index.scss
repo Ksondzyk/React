@@ -12,3 +12,15 @@ body {
   padding: 8px;
   border: 3px solid #eee;
 }
+.profile__name {
+  font-size: 2rem;
+  color: blue;
+  text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 245, 245);
+}
+.profile__birth {
+  font-size: 1.5rem;
+  color: gold;
+  text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 245, 245);
+}
