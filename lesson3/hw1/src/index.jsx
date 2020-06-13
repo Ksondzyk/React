@@ -9,19 +9,15 @@ const userData = {
   firstName: "John",
   lastName: "Doe",
   birthDate() {
-    const now = new Date(); //Текущя дата
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); //Текущя дата без времени
-    const dob = new Date("2001-01-01T11:11:11.819Z"); //Дата рождения
-    const dobnow = new Date(today.getFullYear(), dob.getMonth(), dob.getDate()); //ДР в текущем году
-    let age; //Возраст
+    const res =
+      (new Date() - new Date("2001-01-01T11:11:11.819Z")) /
+      1000 /
+      60 /
+      60 /
+      24 /
+      365.25;
 
-    //Возраст = текущий год - год рождения
-    age = today.getFullYear() - dob.getFullYear();
-    //Если ДР в этом году ещё предстоит, то вычитаем из age один год
-    if (today < dobnow) {
-      age = age - 1;
-    }
-    return age;
+    return Math.floor(res);
   },
 };
 
