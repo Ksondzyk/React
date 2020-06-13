@@ -6,10 +6,13 @@ const formatDate = (date) => moment(date).format("DD MMM YY");
 const Profile = (props) => {
   return (
     <div className="profile">
+      {`Was born ${formatDate(props.user.birthDate)} in ${
+        props.user.birthPlace
+      }`}
       <div className="profile__name">{`${props.user.firstName} ${props.user.lastName}`}</div>
-      <div className="comment__date">{`Was born ${formatDate(
+      {/* <div className="comment__date">{`Was born ${formatDate(
         props.user.birthDate
-      )} in ${props.user.birthPlace}`}</div>
+      )} in ${props.user.birthPlace}`}</div> */}
     </div>
   );
 };
