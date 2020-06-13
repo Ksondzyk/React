@@ -8,7 +8,7 @@ const elementRoot = document.querySelector("#root");
 const user = {
   firsName: "John",
   lastName: "Doe",
-  age: 17,
+  birthDate: 17,
 };
 
 ReactDOM.render(<Greeting user={user} />, elementRoot);

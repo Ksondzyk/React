@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "./Avatar";
-// import <command/> 
+
 
 const UserInfo = (props) => {
   console.log(props);
