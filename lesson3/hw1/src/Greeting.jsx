@@ -5,7 +5,9 @@ import moment from "moment";
 const Greeting = (props) => {
   return (
     <div className="greeting">
-      {`My name is ${props.firsName} ${props.lastName}. I'm ${props.birthDate} years old`}
+      {`My name is ${props.user.firsName} ${
+        props.user.lastName
+      }. I'm ${props.user.birthDate()} years old`}
     </div>
   );
 };
