@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // var moment = require("moment"); // require
-// moment().format(); 
+// moment().format();
 const webpack = require("webpack");
 
 module.exports = (env, argv) => {
@@ -25,6 +25,10 @@ module.exports = (env, argv) => {
             "css-loader",
             "sass-loader",
           ],
+        },
+        {
+          test: /\.(png|jpg|gif)$/i,
+          use: ["url-loader"],
         },
       ],
     },
