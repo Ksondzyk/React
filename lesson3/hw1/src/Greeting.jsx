@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import moment from "moment";
 
 const Greeting = (props) => {
-  console.log(props);
   return (
     <div className="greeting">
       {`My name is ${props.user.firsName} ${
