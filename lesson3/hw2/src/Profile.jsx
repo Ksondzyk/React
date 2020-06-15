@@ -12,14 +12,6 @@ const Profile = (props) => {
       <div className="profile__name">
         {`${props.userData.firstName} ${props.userData.lastName}`}
       </div>
-      {/* <ProfileName
-        firstName={props.userData.firstName}
-        lastName={props.userData.lastName}
-      /> */}
-      {/* <ProfileBirth
-        date={props.userData.birthDate}
-        city={props.userData.birthPlace}
-      /> */}
       <div className="profile__birth">
         {`Was born ${formatDate(props.userData.birthDate)} in ${
           props.userData.birthPlace
