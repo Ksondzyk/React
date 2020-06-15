@@ -8,16 +8,15 @@ const Profile = (props) => {
   return (
     <div className="profile">
       <ProfileName
-        firstName={props.user.firstName}
-        lastName={props.user.lastName}
+        firstName={props.userData.firstName}
+        lastName={props.userData.lastName}
       />
-      <ProfileBirth date={props.user.birthDate} city={props.user.birthPlace} />
+      <ProfileBirth
+        date={props.userData.birthDate}
+        city={props.userData.birthPlace}
+      />
     </div>
   );
 };
 
 export default Profile;
-{
-  /* <b>Was born 17 Jan 91 in London</b>; */
-}
-// LondonformatDate(props.date)
