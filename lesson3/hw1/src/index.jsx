@@ -9,15 +9,10 @@ const userData = {
   firstName: "John",
   lastName: "Doe",
   birthDate() {
-    const res =
-      (new Date() - new Date("2001-01-01T11:11:11.819Z")) /
-      1000 /
-      60 /
-      60 /
-      24 /
-      365.25;
-
-    return Math.floor(res);
+    const YEAR_IN_MILLISECONDS = 31536000000;
+    return Math.floor(
+      (new Date() - new Date("2001-01-01T11:11:11.819Z")) / YEAR_IN_MILLISECONDS
+    );
   },
 };
 
