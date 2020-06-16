@@ -4,7 +4,7 @@ const RED = "#f00";
 const GREEN = "#0f0";
 const BLUE = "#00f";
 
-class Toggler extends React.Component {
+class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,4 +50,4 @@ class Toggler extends React.Component {
   }
 }
 
-export default Toggler;
+export default Toggle;
