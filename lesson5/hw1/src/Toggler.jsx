@@ -8,48 +8,40 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      btnSwith: "off",
+      swithBtn: "off",
     };
   }
 
-  setBodyColor = (color, e) => {
-    // console.log(e);
-    document.body.style.backgroundColor = color;
-
-    console.log(React.textContent);
-
-    if (e.target.textContent === "off") {
-      this.setState({
-        btnSwith: (this.state.btnSwith = "On"),
-      });
+  setBodyColor = (e) => {
+    // document.body.style.backgroundColor = color;
+    console.log(e.target.className);
+    if (e.target.className) {
+      e.target.textContent = "On";
     }
-
-    // console.log(btnSwith);
   };
   render() {
     return (
       <div className="toggler">
         <div
-          className="toggler__button"
-          style={{ backgroundColor: RED }}
-          onClick={this.setBodyColor.bind(this, RED)}
+          className="toggler__button_one"
+          // style={{ backgroundColor: RED }}
+          onClick={this.setBodyColor.bind(this)}
         >
-          off
+          Off
         </div>
         <div
-          className="toggler__button"
-          style={{ backgroundColor: GREEN }}
-          onClick={this.setBodyColor.bind(this, GREEN)}
+          className="toggler__button_two"
+          // style={{ backgroundColor: GREEN }}
+          onClick={this.setBodyColor.bind(this)}
         >
-          off
+          {this.state.swithBtn}
         </div>
         <div
-          className="toggler__button"
-          style={{ backgroundColor: BLUE }}
-          onClick={this.setBodyColor.bind(this, BLUE)}
-          value={"of"}
+          className="toggler__button_three"
+          // style={{ backgroundColor: BLUE }}
+          onClick={this.setBodyColor.bind(this)}
         >
-          off
+          {this.state.swithBtn}
         </div>
       </div>
     );
