@@ -16,9 +16,15 @@ class Toggler extends React.Component {
     // document.body.style.backgroundColor = color;
     console.log(e.target.className);
     if (e.target.className) {
-      e.target.textContent = "On";
+      // e.target.textContent = "On";
+      this.setState((e.target.textContent = "On"));
+    } else {
+      this.setState({
+        swithBtn: (this.state.swithBtn = "off"),
+      });
     }
   };
+
   render() {
     return (
       <div className="toggler">
@@ -27,7 +33,7 @@ class Toggler extends React.Component {
           // style={{ backgroundColor: RED }}
           onClick={this.setBodyColor.bind(this)}
         >
-          Off
+          {this.state.swithBtn}
         </div>
         <div
           className="toggler__button_two"
@@ -38,7 +44,7 @@ class Toggler extends React.Component {
         </div>
         <div
           className="toggler__button_three"
-          // style={{ backgroundColor: BLUE }}
+          style={{ backgroundColor: BLUE }}
           onClick={this.setBodyColor.bind(this)}
         >
           {this.state.swithBtn}
