@@ -5,8 +5,7 @@ const GREEN = "#0f0";
 const BLUE = "#00f";
 
 class Toggler extends React.Component {
-  constructor(props, e) {
-    console.log(props);
+  constructor(props) {
     super(props);
     this.state = {
       btnSwith: "off",
@@ -35,21 +34,22 @@ class Toggler extends React.Component {
           style={{ backgroundColor: RED }}
           onClick={this.setBodyColor.bind(this, RED)}
         >
-          {this.state.btnSwith}
+          off
         </div>
         <div
           className="toggler__button"
           style={{ backgroundColor: GREEN }}
           onClick={this.setBodyColor.bind(this, GREEN)}
         >
-          {this.state.btnSwith}
+          off
         </div>
         <div
           className="toggler__button"
           style={{ backgroundColor: BLUE }}
           onClick={this.setBodyColor.bind(this, BLUE)}
+          value={"of"}
         >
-          {this.state.btnSwith}
+          off
         </div>
       </div>
     );
