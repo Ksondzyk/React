@@ -14,15 +14,18 @@ body {
   align-items: center;
 }
 
-.colors {
+.toggler {
   display: flex;
+  padding: 8px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
   &__button {
-    width: 48px;
-    height: 48px;
-    margin: 16px;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    cursor: pointer;
-    outline: none;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
   }
 }
