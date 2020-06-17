@@ -13,10 +13,8 @@ class Toggler extends React.Component {
 
   render() {
     return (
-      <div className="toggler">
-        <div className="toggler__button" onClick={() => this.toggle()}>
-          {this.state.active ? "On" : "Off"}
-        </div>
+      <div className="toggler" onClick={() => this.toggle()}>
+        {this.state.active ? "On" : "Off"}
       </div>
     );
   }
