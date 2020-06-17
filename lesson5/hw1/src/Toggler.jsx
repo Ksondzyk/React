@@ -3,19 +3,19 @@ import React, { Component } from "react";
 class Toggler extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isToggleOn: true };
+    this.state = { active: true };
   }
-  handleClick() {
-    this.setState((state) => ({
-      isToggleOn: !state.isToggleOn,
-    }));
-  }
+  toggle = () => {
+    this.setState({
+      active: !this.state.active,
+    });
+  };
 
   render() {
     return (
       <div className="toggler">
-        <div className="toggler__button" onClick={() => this.handleClick()}>
-          {this.state.isToggleOn ? "Off" : "On"}
+        <div className="toggler__button" onClick={() => this.toggle()}>
+          {this.state.active ? "Off" : "On"}
         </div>
       </div>
     );
