@@ -4,7 +4,7 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      swithBtn: "off",
+      swithBtn: "Off",
     };
   }
 
