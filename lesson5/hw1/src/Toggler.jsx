@@ -18,14 +18,11 @@ class Toggler extends React.Component {
   // };
 
   toggle = () => {
-    if (this.state.swithBtn === "Off") {
-      this.setState({ swithBtn: (this.state.swithBtn = "On") });
-    } else if (this.state.swithBtn === "On") {
-      this.setState({
-        swithBtn: !this.state.swithBtn,
-      });
-    }
+    this.setState({
+      active: !this.state.active,
+    });
   };
+
   // stateBtn = () => {
   //   if (this.state.swithBtn === "Off") {
   //     this.setState({ swithBtn: (this.state.swithBtn = "On") });
