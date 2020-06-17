@@ -2,13 +2,14 @@ import React, { Component } from "react";
 class ColorPicker extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { color: true };
+    this.state = { color: null };
   }
   onMouse = (arg) => {
     this.setState({ color: (this.state.color = arg) });
   };
   onMouseout = () => {
-    this.setState({ color: !this.state.color });
+    this.setState({ color: (this.state.color = null) });
+    console.log(this.state.color);
   };
   render() {
     return (
