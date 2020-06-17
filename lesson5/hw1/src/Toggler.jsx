@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Toggler extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { active: true };
+    this.state = { active: false };
   }
   toggle = () => {
     this.setState({
@@ -15,7 +15,7 @@ class Toggler extends React.Component {
     return (
       <div className="toggler">
         <div className="toggler__button" onClick={() => this.toggle()}>
-          {this.state.active ? "Off" : "On"}
+          {this.state.active ? "On" : "Off"}
         </div>
       </div>
     );
