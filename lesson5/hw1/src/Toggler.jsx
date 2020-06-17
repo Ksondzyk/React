@@ -6,8 +6,8 @@ class Toggler extends React.Component {
     this.state = { isToggleOn: true };
   }
   handleClick() {
-    this.setState((state) => ({
-      isToggleOn: !state.isToggleOn,
+    this.setState(() => ({
+      isToggleOn: !this.state.isToggleOn,
     }));
   }
 
