@@ -5,11 +5,9 @@ class ColorPicker extends React.Component {
     this.state = { color: true };
   }
   onMouse = (arg) => {
-    console.log("onMouseleave");
     this.setState({ color: (this.state.color = arg) });
   };
   onMouseout = () => {
-    console.log("mousover");
     this.setState({ color: !this.state.color });
   };
   render() {
