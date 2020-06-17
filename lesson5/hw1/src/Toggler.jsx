@@ -3,39 +3,20 @@ import React, { Component } from "react";
 class Toggler extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      swithBtn: "Off",
-    };
+    this.state = { isToggleOn: true };
+    this.handleClick = this.handleClick.bind(this);
   }
-
-  // stateBtn = () => {
-  //   this.setState((prevState) => ({ swithBtn: (prevState.swithBtn = "On") }));
-  //   toggle = () => {
-  //     this.setState({
-  //       active: !this.state.active,
-  //     });
-  //   };
-  // };
-
-  toggle = () => {
-    this.setState({
-      swithBtn: !this.state.swithBtn,
-    });
-  };
-
-  // stateBtn = () => {
-  //   if (this.state.swithBtn === "Off") {
-  //     this.setState({ swithBtn: (this.state.swithBtn = "On") });
-  //   } else if (this.state.swithBtn === "On") {
-  //     this.setState({ swithBtn: (this.state.swithBtn = "Off") });
-  //   }
-  // };
+  handleClick() {
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
+    }));
+  }
 
   render() {
     return (
       <div className="toggler">
-        <div className="toggler__button" onClick={() => this.toggle()}>
-          {this.state.swithBtn}
+        <div className="toggler__button" onClick={this.handleClick}>
+          {this.state.isToggleOn ? "ON" : "OFF"}
         </div>
       </div>
     );
