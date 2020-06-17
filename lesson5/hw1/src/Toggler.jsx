@@ -19,7 +19,7 @@ class Toggler extends React.Component {
 
   toggle = () => {
     this.setState({
-      active: !this.state.active,
+      swithBtn: !this.state.swithBtn,
     });
   };
 
