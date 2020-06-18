@@ -5,13 +5,8 @@ import Offline from "./Offline";
 class Status extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isOnline: false,
-    };
   }
-  // setText = () => {
-  //   this.setState({ isOnline: !this.state.isOnline });
-  // };
+
   render() {
     return (
       <div className="status">
