@@ -9,21 +9,19 @@ class Status extends Component {
       isOnline: false,
     };
   }
-  setText = () => {
-    this.setState({ isOnline: !this.state.isOnline });
-  };
+  // setText = () => {
+  //   this.setState({ isOnline: !this.state.isOnline });
+  // };
   render() {
     return (
       <div className="status">
-        {this.state.isOnline === true ? (
+        {this.props.isOnline ? (
           <Online text={"All good!"} />
         ) : (
           <Offline text={"Offline"} />
         )}
 
-        <button className="status__btn" onClick={this.setText}>
-          Reconnect
-        </button>
+        <button className="status__btn">Reconnect</button>
       </div>
     );
   }
