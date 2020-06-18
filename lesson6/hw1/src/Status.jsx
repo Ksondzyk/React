@@ -15,13 +15,13 @@ class Status extends Component {
   render() {
     return (
       <div className="status">
-        {this.state.isLoggedIn === true ? (
+        {this.state.isOnline ? (
           <Online text={"All good!"} />
         ) : (
           <Offline text={"Offline"} />
         )}
 
-        <button className="status__btn" onClick={() => this.setText()}>
+        <button className="status__btn" onClick={this.setText}>
           Reconnect
         </button>
       </div>
