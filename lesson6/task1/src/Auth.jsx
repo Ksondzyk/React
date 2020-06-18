@@ -19,15 +19,15 @@ class Auth extends Component {
     });
   };
   render() {
-    // const button = this.state.isLoggedIn ? (
-    //   <button className="btn logout" onClick={this.handleLogout}>
-    //     Logout
-    //   </button>
-    // ) : (
-    //   <button className="btn login" onClick={this.handleLogin}>
-    //     Login
-    //   </button>
-    // );
+    const button = this.state.isLoggedIn ? (
+      <button className="btn logout" onClick={this.handleLogout}>
+        Logout
+      </button>
+    ) : (
+      <button className="btn login" onClick={this.handleLogin}>
+        Login
+      </button>
+    );
 
     // if (this.state.isLoggedIn) {
     //   button = (
@@ -45,15 +45,7 @@ class Auth extends Component {
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {this.state.isLoggedIn ? (
-          <button className="btn logout" onClick={this.handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <button className="btn login" onClick={this.handleLogin}>
-            Login
-          </button>
-        )}
+        <div>{button}</div>
       </div>
     );
   }
