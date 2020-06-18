@@ -5,4 +5,4 @@ import Mainbox from "./Mainbox";
 
 const elementRoot = document.querySelector("#root");
 
-ReactDOM.render(<Mainbox unreadMessages={["a"]} />, elementRoot);
+ReactDOM.render(<Mainbox unreadMessages={[]} />, elementRoot);
