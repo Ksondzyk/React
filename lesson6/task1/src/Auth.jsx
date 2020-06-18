@@ -21,39 +21,14 @@ class Auth extends Component {
     });
   };
   render() {
-    // const button = this.state.isLoggedIn ? (
-    //   <button className="btn logout" onClick={this.handleLogout}>
-    //     Logout
-    //   </button>
-    // ) : (
-    //   <button className="btn login" onClick={this.handleLogin}>
-    //     Login
-    //   </button>
-    // );
-
-    // if (this.state.isLoggedIn) {
-    //   button = (
-    //     <button className="btn logout" onClick={this.handleLogin}>
-    //       Logout
-    //     </button>
-    //   );
-    // } else {
-    //   button = (
-    //     <button className="btn login" onClick={this.handleLogin}>
-    //       Login
-    //     </button>
-    //   );
-    // }
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        <div>
-          {this.state.isLoggedIn ? (
-            <Login onClick={this.handleLogout} onLogin={handleLogout()} />
-          ) : (
-            <Logout onClick={() => this.handleLogout()} />
-          )}
-        </div>
+        {this.state.isLoggedIn ? (
+          <Login onClick={this.handleLogin} onLogin={this.handleLogin} />
+        ) : (
+          <Logout onClick={this.handleLogout} onLogout={this.handleLogout} />
+        )}
       </div>
     );
   }
