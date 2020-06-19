@@ -8,31 +8,36 @@ class Auth extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
+      isLoading: false,
     };
   }
   handleLogin = () => {
     setInterval(() => {
       this.setState({
+        isLoading: false,
         isLoggedIn: false,
       });
     }, 2000);
     this.setState({
+      isLoading: true,
       isLoggedIn: true,
     });
   };
   handleLogout = () => {
     this.setState({
-      isLoggedIn: false,
+      isLoggedIn: true,
     });
   };
   render() {
     let elem;
 
     if (this.state.isLoggedIn === true) {
-      elem = <Spinner size={"50"} />;
-      // if (this.state.isLoggedIn === false) {
-      //   <Logout onLogout={this.handleLogout} text={"Logout"} />;
-      // }
+      elem = <Logout onLogout={this.handleLogout} text={"Logout"} />;
+      if (this.state.isLoading === true) {
+        elem = <Spinner size={"50"} />;
+      } else {
+        elem = <Logout onLogout={this.handleLogout} text={"Logout"} />;
+      }
     } else {
       elem = <Login onLogin={this.handleLogin} text={"Login"} />;
     }
