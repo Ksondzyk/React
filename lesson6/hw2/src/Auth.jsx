@@ -17,7 +17,7 @@ class Auth extends Component {
       });
     }, 2000);
     this.setState({
-      isLoggedIn: false,
+      isLoggedIn: true,
     });
   };
   handleLogout = () => {
@@ -29,12 +29,10 @@ class Auth extends Component {
     let elem;
 
     if (this.state.isLoggedIn === true) {
-      elem = <Logout onLogout={this.handleLogout} text={"Logout"} />;
-      if (this.state.isLoggedIn === true) {
-        elem = <Spinner size={"50"} />;
-      } else if (this.state.isLoggedIn === false) {
-        return;
-      }
+      elem = <Spinner size={"50"} />;
+      // if (this.state.isLoggedIn === false) {
+      //   <Logout onLogout={this.handleLogout} text={"Logout"} />;
+      // }
     } else {
       elem = <Login onLogin={this.handleLogin} text={"Login"} />;
     }
