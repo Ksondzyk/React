@@ -7,7 +7,7 @@ class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
       isLoading: false,
     };
   }
@@ -32,15 +32,14 @@ class Auth extends Component {
     let elem;
 
     if (this.state.isLoggedIn === true) {
-      elem = <Logout onLogout={this.handleLogout} text={"Logout"} />;
+      elem = <Login onLogin={this.handleLogin} text={"Login"} />;
       if (this.state.isLoading === true) {
         elem = <Spinner size={"50"} />;
-      } else {
-        elem = <Logout onLogout={this.handleLogout} text={"Logout"} />;
       }
-    } else {
-      elem = <Login onLogin={this.handleLogin} text={"Login"} />;
+    } else if (this.state.isLoggedIn === false) {
+      elem = <Logout onLogout={this.handleLogout} text={"Logout"} />;
     }
+
     return <div className="panel">{elem}</div>;
   }
 }
