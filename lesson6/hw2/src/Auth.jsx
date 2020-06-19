@@ -12,7 +12,7 @@ class Auth extends Component {
     };
   }
   handleLogin = () => {
-    setInterval(() => {
+    setTimeout(() => {
       this.setState({
         isLoading: false,
         isLoggedIn: false,
@@ -30,13 +30,12 @@ class Auth extends Component {
   };
   render() {
     let elem;
-
     if (this.state.isLoggedIn === true) {
       elem = <Login onLogin={this.handleLogin} text={"Login"} />;
       if (this.state.isLoading === true) {
         elem = <Spinner size={"50"} />;
       }
-    } else if (this.state.isLoggedIn === false) {
+    } else {
       elem = <Logout onLogout={this.handleLogout} text={"Logout"} />;
     }
 
