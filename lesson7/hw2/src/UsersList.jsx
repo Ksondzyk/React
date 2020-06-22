@@ -9,14 +9,9 @@ class UsersList extends Component {
       currentPage: 1,
       itemsPerPage: 3,
     };
+    console.log(props);
   }
 
-  // toggleSorting = () => {
-  //   const newSorting = this.state.sorting === "asc" ? "desc" : "asc";
-  //   this.setState({
-  //     sorting: newSorting,
-  //   });
-  // };
   prevValue = () => {
     if (this.state.currentPage > 1) {
       this.setState({
@@ -46,13 +41,6 @@ class UsersList extends Component {
           currentPage={this.state.currentPage}
           totalItems={this.state.itemsPerPage}
         />
-        {/* <button className="btn" onClick={this.toggleSorting} text="1">
-          {this.state.sorting || "-"}
-        </button>
-        <span className="pagination__page">1</span>
-        <button className="btn" onClick={this.toggleSorting} text="1">
-          {this.state.sorting || "-"}
-        </button> */}
         <ul className="users">
           {usersList.map((user) => (
             <User key={user.id} {...user} />
