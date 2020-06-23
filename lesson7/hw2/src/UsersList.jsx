@@ -9,20 +9,22 @@ class UsersList extends Component {
       currentPage: 0,
       itemsPerPage: 3,
     };
-    console.log(this.props);
+    console.log(this.props.users);
   }
 
   prevValue = () => {
     if (this.state.currentPage >= 0) {
       this.setState({
-        currentPage: this.state.currentPage - 1,
+        currentPage: this.props.users - this.state.currentPage,
+        itemsPerPage: this.state.itemsPerPage,
       });
     }
   };
   nextValue = () => {
     if (this.state.currentPage <= 2) {
       this.setState({
-        currentPage: this.state.currentPage + 1,
+        currentPage: this.state.currentPage,
+        itemsPerPage: this.state.itemsPerPage,
       });
     } else {
       return;
