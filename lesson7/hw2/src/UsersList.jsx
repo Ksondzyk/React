@@ -12,23 +12,17 @@ class UsersList extends Component {
     console.log(this.props.users);
   }
 
-  prevValue = () => {
-    if (this.state.currentPage >= 0) {
-      this.setState({
-        currentPage: this.state.currentPage - 1,
-        itemsPerPage: this.state.itemsPerPage,
-      });
-    }
+  goPrev = () => {
+    this.setState({
+      currentPage: this.state.currentPage - 1,
+      itemsPerPage: this.state.itemsPerPage,
+    });
   };
-  nextValue = () => {
-    if (this.state.currentPage <= 1) {
-      this.setState({
-        currentPage: this.state.currentPage + 1,
-        itemsPerPage: this.state.itemsPerPage,
-      });
-    } else {
-      return;
-    }
+  goNext = () => {
+    this.setState({
+      currentPage: this.state.currentPage + 1,
+      itemsPerPage: this.state.itemsPerPage,
+    });
   };
 
   render() {
@@ -37,8 +31,8 @@ class UsersList extends Component {
     return (
       <div>
         <Pagination
-          goPrev={this.prevValue}
-          goNext={this.nextValue}
+          goPrev={this.goPrev}
+          goNext={this.goNext}
           currentPage={this.state.currentPage}
           totalItems={this.props.users.length}
           itemsPerPage={this.state.itemsPerPage}
