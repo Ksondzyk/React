@@ -1,6 +1,12 @@
 import React from "react";
 
-const Pagination = ({ currentPage, goNext, goPrev, totalItems }) => {
+const Pagination = ({
+  currentPage,
+  goNext,
+  goPrev,
+  totalItems,
+  itemsPerPage,
+}) => {
   console.log(currentPage, goNext, goPrev, totalItems);
   let isPrevPageAvailable = "←";
   let isNextPageAvailable = "→";
