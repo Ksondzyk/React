@@ -9,7 +9,6 @@ class UsersList extends Component {
       currentPage: 0,
       itemsPerPage: 3,
     };
-    console.log(this.props.users);
   }
 
   goPrev = () => {
@@ -24,8 +23,6 @@ class UsersList extends Component {
   };
 
   render() {
-    const el = this.props.users;
-    console.log(el);
     return (
       <div>
         <Pagination
