@@ -15,13 +15,11 @@ class UsersList extends Component {
   goPrev = () => {
     this.setState({
       currentPage: this.state.currentPage - 1,
-      itemsPerPage: this.state.itemsPerPage,
     });
   };
   goNext = () => {
     this.setState({
       currentPage: this.state.currentPage + 1,
-      itemsPerPage: this.state.itemsPerPage,
     });
   };
 
