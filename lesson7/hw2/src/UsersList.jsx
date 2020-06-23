@@ -16,6 +16,7 @@ class UsersList extends Component {
     if (this.state.currentPage > 1) {
       this.setState({
         currentPage: this.state.currentPage - 1,
+        itemsPerPage: this.state.itemsPerPage - 1,
       });
     }
   };
@@ -23,6 +24,7 @@ class UsersList extends Component {
     if (this.state.currentPage <= 2) {
       this.setState({
         currentPage: this.state.currentPage + 1,
+        itemsPerPage: this.state.itemsPerPage + 1,
       });
     } else {
       return;
