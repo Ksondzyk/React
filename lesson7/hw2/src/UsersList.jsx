@@ -30,8 +30,7 @@ class UsersList extends Component {
   };
   render() {
     console.log(this.props.users);
-    usersList = this.props.users;
-    let usersList;
+    let usersList = this.props.users;
 
     return (
       <div>
