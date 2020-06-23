@@ -28,8 +28,8 @@ class UsersList extends Component {
       return;
     }
   };
+
   render() {
-    console.log(this.props.users);
     let usersList = this.props.users;
 
     return (
@@ -38,7 +38,8 @@ class UsersList extends Component {
           goPrev={this.prevValue}
           goNext={this.nextValue}
           currentPage={this.state.currentPage}
-          totalItems={this.state.itemsPerPage}
+          totalItems={this.props.users.length}
+          itemsPerPage={this.state.itemsPerPage}
         />
         <ul className="users">
           {usersList.map((user) => (
