@@ -15,15 +15,15 @@ class UsersList extends Component {
   prevValue = () => {
     if (this.state.currentPage >= 0) {
       this.setState({
-        currentPage: this.props.users - this.state.currentPage,
+        currentPage: this.state.currentPage - 1,
         itemsPerPage: this.state.itemsPerPage,
       });
     }
   };
   nextValue = () => {
-    if (this.state.currentPage <= 2) {
+    if (this.state.currentPage <= 1) {
       this.setState({
-        currentPage: this.state.currentPage,
+        currentPage: this.state.currentPage + 1,
         itemsPerPage: this.state.itemsPerPage,
       });
     } else {

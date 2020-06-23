@@ -1,6 +1,7 @@
 import React from "react";
 
 const Pagination = ({ currentPage, goNext, goPrev, totalItems }) => {
+  console.log(currentPage, goNext, goPrev, totalItems);
   let isPrevPageAvailable = "←";
   let isNextPageAvailable = "→";
   let disabledNext = false;
@@ -27,7 +28,7 @@ const Pagination = ({ currentPage, goNext, goPrev, totalItems }) => {
       </button>
       <span className="pagination__page">{currentPage || "1"}</span>
 
-      <button className="btn" onClick={goNext}>
+      <button className="btn" disabled={disabledNext} onClick={goNext}>
         {isNextPageAvailable}
       </button>
     </div>
