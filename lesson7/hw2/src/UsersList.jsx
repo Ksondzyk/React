@@ -44,7 +44,7 @@ class UsersList extends Component {
           itemsPerPage={this.state.itemsPerPage}
         />
         <ul className="users">
-          {this.props.users.slice().map((user) => (
+          {this.props.users.slice(this.state.itemsPerPage).map((user) => (
             <User key={user.id} {...user} />
           ))}
         </ul>
