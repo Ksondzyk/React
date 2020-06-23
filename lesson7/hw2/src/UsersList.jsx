@@ -6,17 +6,16 @@ class UsersList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 1,
+      currentPage: 0,
       itemsPerPage: 3,
     };
-    console.log(props);
+    console.log(this.props);
   }
 
   prevValue = () => {
-    if (this.state.currentPage > 1) {
+    if (this.state.currentPage >= 0) {
       this.setState({
         currentPage: this.state.currentPage - 1,
-        itemsPerPage: this.state.itemsPerPage - 1,
       });
     }
   };
@@ -24,7 +23,6 @@ class UsersList extends Component {
     if (this.state.currentPage <= 2) {
       this.setState({
         currentPage: this.state.currentPage + 1,
-        itemsPerPage: this.state.itemsPerPage + 1,
       });
     } else {
       return;
@@ -45,7 +43,7 @@ class UsersList extends Component {
         />
         <ul className="users">
           {this.props.users
-            .slice(this.state.itemsPerPage - 3, this.state.itemsPerPage)
+            .slice(this.state.currentPage, this.state.itemsPerPage)
             .map((user) => (
               <User key={user.id} {...user} />
             ))}
