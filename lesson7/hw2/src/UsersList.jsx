@@ -30,8 +30,6 @@ class UsersList extends Component {
   };
 
   render() {
-    let usersList = this.props.users;
-
     return (
       <div>
         <Pagination
@@ -42,7 +40,7 @@ class UsersList extends Component {
           itemsPerPage={this.state.itemsPerPage}
         />
         <ul className="users">
-          {usersList.map((user) => (
+          {this.props.users.map((user) => (
             <User key={user.id} {...user} />
           ))}
         </ul>
