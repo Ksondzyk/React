@@ -13,22 +13,21 @@ class UsersList extends Component {
 
   goPrev = () => {
     this.setState({
-      currentPage: this.state.currentPage - 3,
+      currentPage: this.state.currentPage - 1,
     });
   };
 
   goNext = () => {
     this.setState({
-      currentPage: this.state.currentPage + 3,
+      currentPage: this.state.currentPage + 1,
     });
   };
 
   render() {
-    const usersArr = this.props.users.slice(
-      this.state.currentPage,
-      this.state.currentPage + this.state.itemsPerPage
-    );
-    console.log(usersArr);
+    const { currentPage, itemsPerPage } = this.state;
+    const start = currentPage * itemsPerPage;
+    const usersToDisplay = this.props.users.slice(start, start + itemsPerPage);
+    console.log(usersToDisplay);
     return (
       <div>
         <Pagination
@@ -39,7 +38,7 @@ class UsersList extends Component {
           itemsPerPage={this.state.itemsPerPage}
         />
         <ul className="users">
-          {usersArr.map((user) => (
+          {usersToDisplay.map((user) => (
             <User key={user.id} {...user} />
           ))}
         </ul>
