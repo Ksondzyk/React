@@ -7,19 +7,22 @@ const Pagination = ({
   totalItems,
   itemsPerPage,
 }) => {
-  console.log(currentPage, totalItems, itemsPerPage);
-  const isPrevPageAvailable = "";
+  console.log(currentPage);
+  const isPrevPageAvailable = !!(
+    currentPage === 0 && currentPage !== totalItems
+  );
 
-  // const isNextPageAvailable = currentPage === totalItems ?;
+  const isNextPageAvailable = currentPage === totalItems;
+  console.log(isNextPageAvailable);
 
   return (
     <div className="pagination">
-      <button className="btn" onClick={goPrev}>
-        {"→"}
+      <button className="btn" disabled={isPrevPageAvailable} onClick={goPrev}>
+        {isPrevPageAvailable ? "" : "←"}
       </button>
       <span className="pagination__page">{currentPage + 1}</span>
-      <button className="btn" onClick={goNext}>
-        {"→"}
+      <button className="btn" disabled={isNextPageAvailable} onClick={goNext}>
+        {isNextPageAvailable ? "" : "→"}
       </button>
     </div>
   );
