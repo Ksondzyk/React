@@ -7,13 +7,11 @@ const Pagination = ({
   totalItems,
   itemsPerPage,
 }) => {
-  console.log(currentPage);
   const isPrevPageAvailable = !!(
     currentPage === 0 && currentPage !== totalItems
   );
 
   const isNextPageAvailable = currentPage === totalItems;
-  console.log(isNextPageAvailable);
 
   return (
     <div className="pagination">
