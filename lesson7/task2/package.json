@@ -31,12 +31,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "babel-eslint": "^10.1.0",
     "core-js": "^3.6.5",
-    "eslint": "^7.3.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.21.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

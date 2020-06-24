@@ -13,21 +13,20 @@ class UsersList extends Component {
 
   goPrev = () => {
     this.setState({
-      currentPage: this.state.currentPage - 1,
-      itemsPerPage: this.state.itemsPerPage - 3,
+      currentPage: this.state.currentPage - 3,
     });
   };
+
   goNext = () => {
     this.setState({
-      currentPage: this.state.currentPage + 1,
-      itemsPerPage: this.state.itemsPerPage + 3,
+      currentPage: this.state.currentPage + 3,
     });
   };
 
   render() {
     const usersArr = this.props.users.slice(
-      this.state.itemsPerPage - 3,
-      this.state.itemsPerPage
+      this.state.currentPage,
+      this.state.currentPage + this.state.itemsPerPage
     );
     console.log(usersArr);
     return (
@@ -36,7 +35,7 @@ class UsersList extends Component {
           goPrev={this.goPrev}
           goNext={this.goNext}
           currentPage={this.state.currentPage}
-          totalItems={this.props.users.length}
+          totalItems={this.props.users}
           itemsPerPage={this.state.itemsPerPage}
         />
         <ul className="users">

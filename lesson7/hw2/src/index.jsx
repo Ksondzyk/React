@@ -19,7 +19,7 @@ const users = [
   {
     age: 18,
     name: "Tad",
-    id: "id-3",
+    id: "id-2",
   },
   {
     age: 26,
@@ -29,32 +29,32 @@ const users = [
   {
     age: 25,
     name: "Masha",
-    id: "id-3",
+    id: "id-4",
   },
   {
     age: 24,
     name: "Vasia",
-    id: "id-3",
+    id: "id-5",
   },
   {
     age: 20,
     name: "Ivan",
-    id: "id-3",
+    id: "id-6",
   },
   {
     age: 30,
     name: "Kolia",
-    id: "id-3",
+    id: "id-7",
   },
   {
     age: 32,
     name: "Katia",
-    id: "id-3",
+    id: "id-8",
   },
   {
     age: 29,
     name: "Yaroslav",
-    id: "id-3",
+    id: "id-9",
   },
 ];
 
