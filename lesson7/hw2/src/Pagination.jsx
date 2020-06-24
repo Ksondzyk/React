@@ -7,10 +7,13 @@ const Pagination = ({
   totalItems,
   itemsPerPage,
 }) => {
+  console.log(currentPage, goNext, goPrev, totalItems, itemsPerPage);
   let isPrevPageAvailable = "←";
+
   let isNextPageAvailable = "→";
   let disabledNext = false;
   let disabledPrev = false;
+  currentPage === totalItems ? disabledPrev === true : disabledPrev;
   if (currentPage === 3) {
     disabledNext = true;
     isNextPageAvailable = "";
@@ -40,4 +43,3 @@ const Pagination = ({
   );
 };
 export default Pagination;
-// disabled = { disabledNext };
