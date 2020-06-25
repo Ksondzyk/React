@@ -4,6 +4,7 @@ module.exports = {
     "prettier",
     "eslint:recommended",
     "plugin:react/recommended",
+    "react-app",
   ],
   parser: "babel-eslint",
   env: {
@@ -15,8 +16,9 @@ module.exports = {
     "no-console": 0,
     "import/prefer-default-export": 0,
     "prefer-template": 0,
+    "prettier/prettier": "error",
   },
-  plugins: ["react"],
+  plugins: ["react", "prettier"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

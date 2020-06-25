@@ -11,7 +11,13 @@ class Clock extends Component {
     };
   }
   componentDidMount() {
-    this.intervalID = setInterval(() => this.tick(), 5000);
+    this.intervalID = setInterval(
+      () =>
+        this.setState({
+          time: this.toOffsetDate(this.props.offset),
+        }),
+      1000
+    );
   }
   componentWillUnmount() {
     clearInterval(this.intervalID);
@@ -25,11 +31,6 @@ class Clock extends Component {
     return `${hrs}:${mins}:${secs}`;
   }
 
-  tick() {
-    this.setState({
-      time: this.toOffsetDate(this.props.offset),
-    });
-  }
   render() {
     return (
       <div className="clock">
