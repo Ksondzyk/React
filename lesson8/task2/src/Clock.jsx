@@ -1,32 +1,42 @@
 import React, { Component } from "react";
 import "./clock.scss";
 
+import moment from "moment";
+
 class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
+      time: this.toOffsetDate(this.props.offset),
     };
   }
-
   componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState({
-        date: new Date(),
-      });
-    }, 1000);
+    this.intervalID = setInterval(() => this.tick(), 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
   }
 
-  componentWillMount() {
-    clearInterval(this.interval);
+  toOffsetDate(offset) {
+    var d = new Date(new Date().getTime() + 3600 * 1000);
+    var hrs = d.getUTCHours();
+    var mins = d.getUTCMinutes();
+    var secs = d.getUTCSeconds();
+    return `${hrs}:${mins}:${secs}`;
+  }
+
+  tick() {
+    this.setState({
+      time: this.toOffsetDate(this.props.offset),
+    });
   }
   render() {
-    return <div>{this.state.date.toLocaleTimeString()}</div>;
-
-    // <div className="clock">
-    //   <div className="clock__location">{this.props.location}</div>
-    //   <div className="clock__time">{this.state.time}</div>
-    // </div>
+    return (
+      <div className="clock">
+        <div className="clock__location">{this.props.location}</div>
+        <div className="clock__time">{this.state.time}</div>
+      </div>
+    );
   }
 }
 
