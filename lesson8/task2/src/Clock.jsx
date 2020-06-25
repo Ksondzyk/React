@@ -1,34 +1,28 @@
 import React, { Component } from "react";
 import "./clock.scss";
-
 import moment from "moment";
+import getTimeWithOffset from "./getTimeWithOffset.js";
 
 class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: this.toOffsetDate(this.props.offset),
+      time: moment(getTimeWithOffset(this.props.offset)).format("h:mm:ss A"),
     };
   }
   componentDidMount() {
     this.intervalID = setInterval(
       () =>
         this.setState({
-          time: this.toOffsetDate(this.props.offset),
+          time: moment(getTimeWithOffset(this.props.offset)).format(
+            "h:mm:ss A"
+          ),
         }),
       1000
     );
   }
   componentWillUnmount() {
     clearInterval(this.intervalID);
-  }
-
-  toOffsetDate(offset) {
-    var d = new Date(new Date().getTime() + 3600 * 1000);
-    var hrs = d.getUTCHours();
-    var mins = d.getUTCMinutes();
-    var secs = d.getUTCSeconds();
-    return `${hrs}:${mins}:${secs}`;
   }
 
   render() {
