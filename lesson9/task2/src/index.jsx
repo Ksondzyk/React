@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import UserForm from "./UserForm";
+import App from "./App";
 
 const elementRoot = document.querySelector("#root");
 
-ReactDOM.render(<UserForm />, elementRoot);
-
+ReactDOM.render(<App />, elementRoot);
