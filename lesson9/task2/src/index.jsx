@@ -4,5 +4,6 @@ import "./index.scss";
 import App from "./App";
 
 const elementRoot = document.querySelector("#root");
+const user = { name: "roman", age: 27 };
 
-ReactDOM.render(<App />, elementRoot);
+ReactDOM.render(<App user={user} />, elementRoot);

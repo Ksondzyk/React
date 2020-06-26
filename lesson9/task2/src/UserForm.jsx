@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 
 class UserForm extends Component {
-  state = {
-    name: "",
-    student: "",
-    occupation: "",
-    about: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      student: "",
+      occupation: "",
+      about: "",
+    };
+    console.log(props);
+  }
 
   handleChange = (event) => {
     const { name, value, checked, type } = event.target;
@@ -24,7 +28,7 @@ class UserForm extends Component {
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSumbit}>
+      <form className="login-form" onSubmit={() => this.props.onSubmit()}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
