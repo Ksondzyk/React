@@ -2,14 +2,15 @@ import React, { Component } from "react";
 
 class ConnectionStatus extends Component {
   state = {
-    status: "online",
+    online: null,
+    offline: null,
   };
 
   componentDidMount() {
     window.addEventListener("online", this.statusConnection);
     window.addEventListener("offline", this.statusConnection);
 
-    const { online, offline } = window.status;
+    const { online, offline } = window;
 
     this.setStatus(online, offline);
   }
@@ -24,10 +25,10 @@ class ConnectionStatus extends Component {
     this.setStatus(status);
   };
 
-  setStatus = (online, offline) => {
+  setStatus = () => {
     this.setState({
-      online,
-      offline,
+      online: (this.state.online = "online"),
+      offline: (this.state.online = "offline"),
     });
   };
 
