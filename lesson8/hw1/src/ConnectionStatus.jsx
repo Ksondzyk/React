@@ -7,13 +7,15 @@ class ConnectionStatus extends Component {
 
   componentDidMount() {
     window.addEventListener("online", this.statusConnection);
+    window.addEventListener("offline", this.statusConnection);
 
-    const { online } = window;
+    const { online, offline } = window.status;
 
-    this.setStatus(online);
+    this.setStatus(online, offline);
   }
 
   componentWillUnmount() {
+    window.removeEventListener("online", this.statusConnection);
     window.removeEventListener("offline", this.statusConnection);
   }
   statusConnection = (e) => {
@@ -22,9 +24,10 @@ class ConnectionStatus extends Component {
     this.setStatus(status);
   };
 
-  setStatus = () => {
+  setStatus = (online, offline) => {
     this.setState({
-      status: (this.state.status = "online"),
+      online,
+      offline,
     });
   };
 
