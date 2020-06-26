@@ -2,25 +2,23 @@ import React, { Component } from "react";
 
 class ConnectionStatus extends Component {
   state = {
-    status: "online",
+    status: null,
   };
 
   componentDidMount() {
-    window.addEventListener("offline", this.statusConnection);
+    window.addEventListener("online", this.statusConnection);
 
-    console.log(window.status);
+    const { status } = window;
 
-    const { offline } = window;
-
-    this.setStatus(offline);
+    this.setStatus(status);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("online", this.statusConnection);
+    window.removeEventListener("offline", this.statusConnection);
   }
   statusConnection = (e) => {
-    const { offline } = e.target;
-    this.setStatus(offline);
+    const { status } = e.target;
+    this.setStatus(status);
   };
 
   setStatus = () => {
@@ -28,10 +26,13 @@ class ConnectionStatus extends Component {
       status: (this.state.status = "offline"),
     });
   };
+
   render() {
+    const statusVisible = this.state.status === "offline" ? "online" : "online";
+    const isRender = this.state.status === "offline" ? true : false;
     return (
-      <div className="status status_offline">
-        {this.state.status === "offline" ? "offline" : "online"}
+      <div className={`status ${isRender ? "status_offline" : ""}`}>
+        {statusVisible}
       </div>
     );
   }
