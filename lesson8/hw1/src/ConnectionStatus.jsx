@@ -17,20 +17,20 @@ class ConnectionStatus extends Component {
 
   setStatusOnline = () => {
     this.setState({
-      status: window.navigator.onLine,
+      status: true,
     });
   };
   setStatusOffline = () => {
     this.setState({
-      status: window.navigator.onLine,
+      status: false,
     });
   };
 
   render() {
-    const statusVisible = this.state.status === false ? "offline" : "online";
-    const isRender = !this.state.status ? true : false;
+    const statusVisible = this.state.status ? "online" : "offline";
+    const isRender = !this.state.status;
     return (
-      <div className={`status ${isRender ? "status_offline" : ""}`}>
+      <div className={`status ${isRender ? "status_offline" : null}`}>
         {statusVisible}
       </div>
     );
