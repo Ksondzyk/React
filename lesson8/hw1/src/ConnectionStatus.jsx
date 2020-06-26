@@ -2,40 +2,39 @@ import React, { Component } from "react";
 
 class ConnectionStatus extends Component {
   state = {
-    online: null,
-    offline: null,
+    status: null,
   };
 
   componentDidMount() {
-    window.addEventListener("online", this.statusConnection);
-    window.addEventListener("offline", this.statusConnection);
+    window.addEventListener("online", this.setStatusOnline);
+    window.addEventListener("offline", this.setStatusOffline);
 
-    const { online, offline } = window;
-
-    this.setStatus(online, offline);
+    if (window.navigator.onLine) {
+      this.setStatusOnline(true);
+    } else {
+      this.setStatusOffline(false);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener("online", this.statusConnection);
-    window.removeEventListener("offline", this.statusConnection);
+    window.removeEventListener("online", this.setStatusOnline);
+    window.removeEventListener("offline", this.setStatusOffline);
   }
-  statusConnection = (e) => {
-    const { status } = e.target;
-    console.log(status);
-    this.setStatus(status);
-  };
 
-  setStatus = () => {
+  setStatusOnline = () => {
     this.setState({
-      online: (this.state.online = "online"),
-      offline: (this.state.online = "offline"),
+      status: (this.state.status = false),
+    });
+  };
+  setStatusOffline = () => {
+    this.setState({
+      status: (this.state.status = false),
     });
   };
 
   render() {
-    const statusVisible =
-      this.state.status === "offline" ? "offline" : "online";
-    const isRender = this.state.status === "offline" ? true : false;
+    const statusVisible = this.state.status === false ? "offline" : "online";
+    const isRender = !this.state.status ? true : false;
     return (
       <div className={`status ${isRender ? "status_offline" : ""}`}>
         {statusVisible}
