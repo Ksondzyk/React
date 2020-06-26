@@ -1,11 +1,11 @@
 module.exports = {
   extends: [
+    "react-app",
     "airbnb-base",
     "prettier",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "react-app",
+    "plugin:jsx-a11y/recommended",
   ],
+  plugins: ["jsx-a11y"],
   parser: "babel-eslint",
   env: {
     browser: true,
@@ -16,19 +16,5 @@ module.exports = {
     "no-console": 0,
     "import/prefer-default-export": 0,
     "prefer-template": 0,
-    "prettier/prettier": "error",
-  },
-  plugins: ["react", "prettier"],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  settings: {
-    "import/ignore": {
-      node: {
-        extensions: [".js", ".jsx"],
-      },
-    },
   },
 };
