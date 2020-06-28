@@ -9,6 +9,7 @@ class UserForm extends Component {
       occupation: "",
       about: "",
     };
+    console.log(this.props);
   }
 
   handleChange = (event) => {
@@ -22,12 +23,11 @@ class UserForm extends Component {
 
   handleSumbit = (event) => {
     event.preventDefault();
-    // console.log(this.state);
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={() => this.handleSumbit()}>
+      <form className="login-form" onSubmit={() => this.props.onSubmit()}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
