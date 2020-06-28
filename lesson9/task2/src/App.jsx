@@ -2,12 +2,12 @@ import React from "react";
 
 import UserForm from "./UserForm";
 
-// const createUser = ({ user }) => {
-//   console.log(user);
-// };
+const createUser = (props) => {
+  console.log(props);
+};
 
 const App = () => {
-  return <UserForm  />;
+  return <UserForm onSubmit={createUser} />;
 };
 
 export default App;
