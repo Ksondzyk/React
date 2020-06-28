@@ -22,12 +22,12 @@ class UserForm extends Component {
 
   handleSumbit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSumbit}>
+      <form className="login-form" onSubmit={() => this.handleSumbit()}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
