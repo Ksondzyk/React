@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class UserForm extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
+
   handleSumbit = (event) => {
     event.preventDefault();
     const formData = Object.fromEntries([...new FormData(this.formRef)]);
@@ -16,7 +21,8 @@ class UserForm extends Component {
       <form
         ref={this.setRef}
         className="login-form"
-        onSubmit={this.handleSumbit}
+        // onSubmit={this.handleSumbit}
+        onSubmit={this.props.createUser}
       >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
