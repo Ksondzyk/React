@@ -23,7 +23,7 @@ class UserForm extends Component {
 
   handleSumbit = (event) => {
     event.preventDefault();
-    this.props.onSubmit();
+    this.props.onSubmit(this.state);
   };
 
   render() {
