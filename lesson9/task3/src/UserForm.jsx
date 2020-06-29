@@ -7,10 +7,9 @@ class UserForm extends Component {
   }
 
   handleSumbit = (event) => {
-    this.props.onSubmit()
     event.preventDefault();
     const formData = Object.fromEntries([...new FormData(this.formRef)]);
-    console.log(formData);
+    this.props.onSubmit(formData);
   };
 
   setRef = (node) => {
@@ -22,7 +21,7 @@ class UserForm extends Component {
       <form
         ref={this.setRef}
         className="login-form"
-        // onSubmit={this.handleSumbit}
+        onSubmit={this.handleSumbit}
       >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
