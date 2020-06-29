@@ -6,7 +6,7 @@ class UserForm extends Component {
     console.log(props);
   }
 
-  handleSumbit = (event) => {
+  onSubmit = (event) => {
     event.preventDefault();
     const formData = Object.fromEntries([...new FormData(this.formRef)]);
     console.log(formData);
@@ -22,7 +22,6 @@ class UserForm extends Component {
         ref={this.setRef}
         className="login-form"
         // onSubmit={this.handleSumbit}
-        onSubmit={this.props.createUser}
       >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
