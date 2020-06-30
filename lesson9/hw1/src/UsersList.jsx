@@ -8,7 +8,7 @@ class UsersList extends Component {
     this.state = {
       filterText: "",
     };
-    console.log(this.state.value);
+    console.log(this.props);
   }
 
   getInputValue = (value) => {
