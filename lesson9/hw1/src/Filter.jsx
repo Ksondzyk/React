@@ -3,13 +3,12 @@ import React, { Component } from "react";
 class Filter extends Component {
   constructor(props) {
     super(props);
+
     console.log(this.props);
   }
 
   handleChange = (event) => {
-    this.setState({
-      filterText: event.target.value.toLowerCase(),
-    });
+    this.props.onChange(event.target.value);
   };
 
   render() {

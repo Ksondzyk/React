@@ -12,6 +12,7 @@ class UsersList extends Component {
   }
 
   getInputValue = (value) => {
+    console.log(value);
     this.setState({
       filterText: value,
     });
@@ -27,6 +28,8 @@ class UsersList extends Component {
         return name.toLowerCase().includes(this.state.filterText.toLowerCase());
       });
     }
+
+    console.log(result.length);
     return (
       <div>
         <Filter
