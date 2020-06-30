@@ -3,18 +3,12 @@ import React, { Component } from "react";
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      inputText: "",
-    };
     console.log(this.props);
   }
 
   handleChange = (event) => {
     const inputValue = event.target.value;
-    this.setState({
-      inputText: inputValue,
-    });
-    this.props.onChange(this.state.inputText);
+    this.props.onChange(inputValue);
   };
 
   render() {
