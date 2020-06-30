@@ -7,7 +7,6 @@ class UsersList extends Component {
     super(props);
     this.state = {
       filterText: "",
-      usersArr: props.users,
     };
     console.log(this.state.value);
   }
@@ -20,25 +19,17 @@ class UsersList extends Component {
     console.log(this.state.filterText);
   };
 
-  // getInputValue = (value) => {
-  //   const result = this.props.users.filter(({ name }) => {
-  //     return name.includes(value);
-  //   });
-  //   console.log(result);
-  //   return this.result;
-  // };
-
   render() {
-    const result = this.props.users.filter(({ name }) => {
-      return name.includes(this.state.filterText);
-    });
+    let result;
+    if (this.state.filterText === undefined) {
+      result = this.props.users;
+    } else {
+      result = this.props.users.filter(({ name }) => {
+        return name.includes(this.state.filterText);
+      });
+    }
+
     console.log(result.length);
-    // let res;
-    // if (this.getInputValue === "undefined") {
-    //   res = this.props.users;
-    // } else {
-    //   res = this.getInputValue();
-    // }
     return (
       <div>
         <Filter
