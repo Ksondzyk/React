@@ -1,18 +1,10 @@
 import React, { Component } from "react";
 
-class Filter extends Component {
+class Filter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      filterText: "",
-    };
+    console.log(props);
   }
-
-  handleChange = (event) => {
-    this.setState({
-      filterText: event.target.value.toLowerCase(),
-    });
-  };
 
   render() {
     return (
@@ -22,7 +14,7 @@ class Filter extends Component {
           type="text"
           className="filter__input"
           value={this.props.filterText}
-          onChange={this.handleChange}
+          onChange={this.props.handleChange}
         />
       </div>
     );

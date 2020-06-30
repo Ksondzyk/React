@@ -11,12 +11,10 @@ class UsersList extends Component {
     console.log(this.props);
   }
 
-  getInputValue = (value) => {
-    console.log(value);
+  handleChange = (event) => {
     this.setState({
-      filterText: value,
+      filterText: event.target.value.toLowerCase(),
     });
-    console.log(this.state.filterText);
   };
 
   render() {
@@ -33,7 +31,7 @@ class UsersList extends Component {
     return (
       <div>
         <Filter
-          onChange={this.getInputValue}
+          handleChange={this.handleChange}
           filterText={this.state.filterText}
           count={result.length}
         />
