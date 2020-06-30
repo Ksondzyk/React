@@ -8,7 +8,7 @@ class Filter extends Component {
   }
 
   handleChange = (event) => {
-    this.props.onChange(event.target.value);
+    this.props.onChange(event.target.value.toLowerCase());
   };
 
   render() {
