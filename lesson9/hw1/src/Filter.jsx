@@ -24,7 +24,7 @@ class Filter extends Component {
         <input
           type="text"
           className="filter__input"
-          value={this.state.inputText}
+          value={this.props.filterText}
           onChange={this.handleChange}
         />
       </div>
