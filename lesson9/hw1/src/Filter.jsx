@@ -7,8 +7,9 @@ class Filter extends Component {
   }
 
   handleChange = (event) => {
-    const inputValue = event.target.value;
-    this.props.onChange(inputValue);
+    this.setState({
+      filterText: event.target.value.toLowerCase(),
+    });
   };
 
   render() {
