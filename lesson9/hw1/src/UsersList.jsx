@@ -33,7 +33,7 @@ class UsersList extends Component {
     return (
       <div>
         <Filter
-          onChange={this.getInputValue}
+          onChange={(e) => this.getInputValue(e)}
           filterText={this.state.filterText}
           count={result.length}
         />
