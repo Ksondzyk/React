@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 
 class Filter extends Component {
   constructor(props) {
@@ -25,7 +24,7 @@ class Filter extends Component {
         <input
           type="text"
           className="filter__input"
-          value={this.state.filterText}
+          value={this.state.inputText}
           onChange={this.handleChange}
         />
       </div>

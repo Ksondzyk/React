@@ -25,7 +25,7 @@ class UsersList extends Component {
       result = this.props.users;
     } else {
       result = this.props.users.filter(({ name }) => {
-        return name.includes(this.state.filterText);
+        return name.toLowerCase().includes(this.state.filterText.toLowerCase());
       });
     }
 
