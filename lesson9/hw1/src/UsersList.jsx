@@ -6,7 +6,7 @@ class UsersList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: "",
+      filterText: "",
       usersArr: props.users,
     };
     console.log(this.state.value);
@@ -15,9 +15,9 @@ class UsersList extends Component {
   getInputValue = (value) => {
     console.log(value);
     this.setState({
-      input: value,
+      filterText: value,
     });
-    console.log(this.state.input);
+    console.log(this.state.filterText);
   };
 
   // getInputValue = (value) => {
@@ -30,9 +30,9 @@ class UsersList extends Component {
 
   render() {
     const result = this.props.users.filter(({ name }) => {
-      return name.includes(this.state.input);
+      return name.includes(this.state.filterText);
     });
-    console.log(result);
+    console.log(result.length);
     // let res;
     // if (this.getInputValue === "undefined") {
     //   res = this.props.users;
@@ -41,7 +41,11 @@ class UsersList extends Component {
     // }
     return (
       <div>
-        <Filter onChange={this.getInputValue} />
+        <Filter
+          onChange={this.getInputValue}
+          filterText={this.state.filterText}
+          count={result.length}
+        />
         <ul className="users">
           {result.map((user) => (
             <User key={user.id} {...user} />
