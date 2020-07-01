@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UserProfile from "./UserProfile";
-import UserMenu from "./userMenu";
+import UserMenu from "./UserMenu";
 
 class App extends Component {
   state = {
