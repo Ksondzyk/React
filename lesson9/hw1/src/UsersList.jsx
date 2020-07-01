@@ -19,7 +19,7 @@ class UsersList extends Component {
 
   render() {
     let result;
-    if (this.state.filterText === undefined) {
+    if (!this.state.filterText) {
       result = this.props.users;
     } else {
       result = this.props.users.filter(({ name }) => {
