@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import Page from "./App";
+import App from "./App";
 
 const elementRoot = document.querySelector("#root");
 
-ReactDOM.render(<Page userId="github" />, elementRoot);
+ReactDOM.render(<App userId="github" />, elementRoot);
