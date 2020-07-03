@@ -18,4 +18,14 @@ const Expand = ({ children, title, dialog, visible }) => {
     </div>
   );
 };
+Expand.propTypes = {
+  dialog: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string,
+};
+Expand.defaultProps = {
+  title: "Pleace click btn ",
+};
+
 export default Expand;

@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="app">
         <Expand
-          title="Some title"
+          title="Click to Btn"
           dialog={this.showDialog}
           visible={this.state.widthContent}
         >
