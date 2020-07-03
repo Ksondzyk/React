@@ -13,8 +13,9 @@ const Expand = ({ children, title, dialog, visible }) => {
             <i className="fas fa-chevron-down"></i>
           )}
         </button>
+        {visible ? <div className="expand__content">{children}</div> : ""}
       </div>
-      <div className="expand__content">{visible ? children : ""}</div>
+      {/* <div className="expand__content">{visible ? children : ""}</div> */}
     </div>
   );
 };
