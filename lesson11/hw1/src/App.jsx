@@ -7,15 +7,10 @@ class App extends Component {
   };
 
   showDialog = () => {
-    if (this.state.widthContent) {
-      this.setState({
-        widthContent: false,
-      });
-    } else {
-      this.setState({
-        widthContent: true,
-      });
-    }
+    const bool = !!this.state.widthContent;
+    this.setState({
+      widthContent: !bool,
+    });
   };
 
   render() {
