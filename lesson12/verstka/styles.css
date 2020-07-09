@@ -142,7 +142,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 448px;
+  min-width: 448px;
   min-height: 448px;
   padding: 1rem;
   box-shadow: 2px 2px 38px rgba(0, 0, 0, 0.5);
