@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link, Switch, useParams } from "react-router-dom";
 
-import Product from "./User";
+import User from "./User";
 
 const Users = ({ match }) => {
   return (
@@ -20,7 +20,7 @@ const Users = ({ match }) => {
           <span>Select a user please</span>
         </Route>
         <Route path={`${match.url}/:companyName`}>
-          <Product />
+          <User />
         </Route>
       </Switch>
     </div>
