@@ -19,7 +19,7 @@ const Users = ({ match }) => {
         <Route exact path={match.url}>
           <span>Select a user please</span>
         </Route>
-        <Route path={`${match.url}/:productId`}>
+        <Route path={`${match.url}/:companyName`}>
           <Product />
         </Route>
       </Switch>
