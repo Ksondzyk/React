@@ -14,7 +14,7 @@ const Products = ({ match }) => {
           <Link to={`${match.url}/ball`}>Ball</Link>
         </li>
       </ul>
-      <h1>Product</h1>
+      <h1>Products</h1>
       <Switch>
         <Route exact path={match.url}>
           <span>Select a product please</span>
