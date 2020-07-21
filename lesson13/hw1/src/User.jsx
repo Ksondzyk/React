@@ -1,30 +1,55 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { Component } from "react";
 
-const User = () => {
-  const { companyName } = useParams();
-  const [user, setDates] = useState([]);
+class User extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userData: null,
+    };
+    console.log(this.props.match.url);
+    console.log(this.state.userData);
+  }
 
-  const getDate = fetch(`https://api.github.com/users/${companyName}`).then(
-    (response) => {
-      if (!response.ok) throw Error(response.statusText);
-      return response.json();
+  componentDidMount() {
+    fetch(`https://api.github.com${this.props.match.url}`)
+      .then((responce) => {
+        if (!responce.ok) {
+          return new Error("Ops");
+        }
+        return responce.json();
+      })
+      .then((data) => this.setState({ userData: data }));
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps);
+    if (this.props.match.url !== prevProps) {
+      fetch(`https://api.github.com${this.props.match.url}`)
+        .then((responce) => {
+          if (!responce.ok) {
+            return new Error("Ops");
+          }
+          return responce.json();
+        })
+        .then((data) => this.setState({ userData: data }));
     }
-  );
-  getDate.then(({ avatar_url, name, location }) =>
-    user.push(avatar_url, name, location)
-  );
+  }
 
-  console.log(user);
-
-  return (
-    <div className="user">
-      <img alt="User Avatar" src={user[0]} className="user__avatar" />
-      <div className="user__info">
-        <span className="user__name">{user[1]}</span>
-        <span className="user__location">{user[2]}</span>
+  render() {
+    const { userData } = this.state;
+    if (!userData) {
+      return null;
+    }
+    const { name, avatar_url, location } = userData;
+    return (
+      <div className="user">
+        <img alt="User Avatar" src={avatar_url} className="user__avatar" />
+        <div className="user__info">
+          <span className="user__name">{name}</span>
+          <span className="user__location">{location}</span>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 export default User;
