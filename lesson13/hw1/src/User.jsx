@@ -23,7 +23,7 @@ class User extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log(prevProps);
-    if (this.props.match.url !== prevProps) {
+    if (this.props.match !== prevProps) {
       fetch(`https://api.github.com${this.props.match.url}`)
         .then((responce) => {
           if (!responce.ok) {
