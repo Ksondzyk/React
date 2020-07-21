@@ -8,7 +8,7 @@ const ConnectionStatus = () => {
 
     return () => {
       window.removeEventListener("online", () => setIsOnline(true));
-      window.addEventListener("offline", () => setIsOnline(false));
+      window.removeEventListener("offline", () => setIsOnline(false));
     };
   }, []);
 
