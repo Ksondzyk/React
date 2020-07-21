@@ -4,6 +4,7 @@ module.exports = {
     "airbnb-base",
     "prettier",
     "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
   ],
   plugins: ["jsx-a11y"],
   parser: "babel-eslint",
